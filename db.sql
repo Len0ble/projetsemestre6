@@ -19,7 +19,7 @@ CREATE TABLE `Produit` (
   `prixU` float,
   `image` VARCHAR(100),
   `id_boutiquier` int,
-  CONSTRAINT `fk_boutiquier` FOREIGN KEY (`id_boutiquier`) REFERENCES `User` (`id`)
+  CONSTRAINT `fk_boutiquier` FOREIGN KEY (`id_boutiquier`) REFERENCES  `User` (`id`)
 );
 CREATE TABLE `Panier` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
@@ -60,7 +60,7 @@ CREATE TABLE `Categorie`(
 );
 
 --  ajouter 2 produits dans le panier qui a l'id =1(DETAILS PANIER)
-INSERT INTO`ProduitPanier`VALUE(null,1,2,2,(2*2500));
+  
 INSERT INTO`ProduitPanier`VALUE(null,1,4,2,(2*1000));
 INSERT INTO`Commande`VALUE(null,"2021-02-26", 7000,"Valider", 3);
 --  ajouter 2 Produits dans le Commande qui a l'id =1(DETAILS COMMANDE)

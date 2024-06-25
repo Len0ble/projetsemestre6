@@ -55,7 +55,7 @@ class DBTransaction{
                 $result->fetch();
                return 1;
             } catch (\PDOException $th) {
-                return O;
+                return 0;
             }
     }
         
@@ -65,7 +65,7 @@ class DBTransaction{
                 $result->fetch();
                return 1;
             } catch (\PDOException $th) {
-                return O;
+                return 0;
             }
     }
 
@@ -187,7 +187,7 @@ public function createCategorie($nom,$description){
         $result->fetch();
        return 1;
     } catch (\PDOException $th) {
-        return O;
+        return 0;
     }
 }
 
@@ -240,18 +240,18 @@ public function validerCommande($id_commande){
         $result->fetch();
        return 1;
     } catch (\PDOException $th) {
-        return O;
+        return 0;
     }
 }
 
 
 public function updateUser($id,$nom,$prenom,$adresse,$tel,$pwd,$profile){
     try {
-    $result =$this->database->query("UPDATE `User` SET nom='$nom',prenom='$prenom',adresse='$adresse',tel='$tel',pwd='$pwd',profile='$profile',corbeille='0' WHERE id='$id_user'");
+    $result =$this->database->query("UPDATE `User` SET nom='$nom',prenom='$prenom',adresse='$adresse',tel='$tel',pwd='$pwd',profile='$profile',corbeille='0' WHERE id='$id'");
     $result->fetch();
    return 1;
     } catch (PDOException $th) {
-        return O;
+        return 0;
     }
 }
 
@@ -261,7 +261,7 @@ public function updateProfilUser($id,$profile){
     $result->fetch();
    return 1;
     } catch (PDOException $th) {
-        return O;
+        return 0;
     }
 }
 
@@ -271,7 +271,7 @@ public function updateCategorie($id,$nom,$description){
     $result->fetch();
    return 1;
     } catch (PDOException $th) {
-        return O;
+        return 0;
     }
 }
 
@@ -280,7 +280,7 @@ public function updateprofil($id,$nom,$prenom,$adresse,$tel,$pwd){
     $result =$this->database->query("UPDATE `User` SET nom='$nom',prenom='$prenom',adresse='$adresse',tel='$tel' WHERE id='$id'");
    return 1;
     } catch (PDOException $th) {
-        return O;
+        return 0;
     }
 }
 
@@ -290,7 +290,7 @@ public function updateprofil($id,$nom,$prenom,$adresse,$tel,$pwd){
         $result->fetch();
        return 1;
     } catch (\PDOException$th) {
-        return O;
+        return 0;
     }
  }
 
@@ -300,7 +300,7 @@ public function updateNbrPanier($id,$nbr){
          $result->fetch();
        return 1;
         } catch (PDOException $th) {
-            return O;
+            return 0;
         }
 }
 
@@ -310,7 +310,7 @@ public function updateNbrproduitPanier($id,$nbr,$montantTOT){
     $result->fetch();
    return 1;
     } catch (PDOException $th) {
-        return O;
+        return 0;
     }
 }
 
